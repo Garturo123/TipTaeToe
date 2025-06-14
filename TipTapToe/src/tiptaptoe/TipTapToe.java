@@ -363,7 +363,7 @@ class Game {
     }
 
     public void showGameBoard() {
-        gameFrame = new JFrame("X-0 Game: " + player1.getName() + " vs " + player2.getName());
+        gameFrame = new JFrame("X-O Game: " + player1.getName() + " vs " + player2.getName());
         gameFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         gameFrame.setSize(400, 400);
         gameFrame.setLayout(new BorderLayout());
@@ -401,7 +401,7 @@ class Game {
         char symbol = player1Turn ? 'X' : 'O';
         board[row][col] = symbol;
         buttons[row][col].setText(String.valueOf(symbol));
-        buttons[row][col].setEnabled(false);
+        buttons[row][col].setEnabled(true);
 
         if (checkWin()) {
             gameFrame.dispose();
